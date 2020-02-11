@@ -32,4 +32,4 @@ class Stuff(Personal):
 
     def __init__(self, name, surname):
         super().__init__(name, surname)
-        salary = 5000
+        salary = 50001

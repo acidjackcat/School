@@ -18,7 +18,8 @@ class Pupils(object):
 
     @property
     def pay(self):
-        return int(self.basic_pay * self.year)
+        pay = self.basic_pay * self.year
+        return int(pay)
 
 
 # Some simple tests:

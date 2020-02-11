@@ -8,9 +8,9 @@ class School(object):
 
     def __init__(self, name):
         self.name = name
-        director = Director
-        stuff = Stuff
-        teacher = Teachers
+    director = Director
+    stuff = Stuff
+    teacher = Teachers
 
     def debet(self):
         """Method for calculation of income and outcome difference."""

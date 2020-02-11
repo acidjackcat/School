@@ -1,4 +1,4 @@
-import school
+
 
 if __name__ == '__main__':
     first_year = Excercises.Classroom("first_year", 1)

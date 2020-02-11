@@ -1,12 +1,11 @@
 class Pupils(object):
     """Here is the class which should represent students in our school"""
-    basic_pay = 100
 
-    def __init__(self, name, surname, year, gender):
-        self.f_name = name
-        self.l_name = surname
+    def __init__(self, name, surname, year):
+        self.name = name
+        self.surname = surname
         self.year = year
-        self.gender = gender
+        self.basic_pay = 100
 
     def run(self):
         print(f"Я {self.name} {self.surname} бігаю по школі")
@@ -19,5 +18,9 @@ class Pupils(object):
 
     @property
     def pay(self):
-        payment = self.basic_pay * self.year
-        return payment
+        return int(self.basic_pay * self.year)
+
+
+# Some simple tests:
+# bob = Pupils("bob", 'rodgers', 5)
+# print(bob.basic_pay, bob.name, bob.pay)

@@ -36,6 +36,27 @@ class School(object):
             income += classes.outcome
         return income
 
+    @property
+    def teachers_costs(self):
+        costs = 0
+        for teachers in self.teachers:
+            costs += teachers.salary
+
+    @property
+    def director_costs(self):
+        costs = 0
+        for director in self.director:
+            costs += self.director.stake
+
+    @property
+    def stuff_costs(self):
+        costs = 0
+        for stuf in self.stuff:
+            costs += self.stuff.stake
+
+    def debet(self):
+        debet = self.income - (self.director_costs + self.stuff_costs)
+        return int(debet)
 
 if __name__ == '__main__':
     academy = School('Academy')

@@ -1,6 +1,6 @@
 from personal import Teachers
 from pupils import Pupils
-from school import School
+
 
 
 class Class(object):
@@ -8,18 +8,23 @@ class Class(object):
     def __init__(self, name, year):
         self.name = name
         self.year = year
-        self.pupils_in_class = []
-        self.class_teacher = None
+        self.pupils_list = []
+        self.teachers_list = []
 
-    def assign_pupils(self):
-        return self.pupils_in_class.append(Pupils)
+    def assign_pupil(self, pupil):
+        return self.pupils_list.append(pupil)
 
-    def assign_teacher(self):
-        self.class_teacher = Teachers()
+    def assign_teacher(self, teacher):
+        return self.teachers_list.append(teacher)
 
-    @property
     def class_earn(self):
-        """Sum of monwy that is bringing separate studdy class"""
-        earn = int(Pupils.pay * len(self.pupils_list) - \
-                   Teachers.salary)
+        earn = 0
+        for pupil in self.pupils_list:
+            earn += pupil.payment()
         return earn
+
+
+if __name__ == '__main__':
+    fifth = Class('Fifth grade', 5)
+    fifth.assign_pupil()
+    fifth.class_earn()

@@ -28,10 +28,7 @@ class School(object):
         return self.teachers.append(Class.class_teacher)
 
     def assign_pupils_to_school(self):
-        return School.pupils_in_school.append(Class.pupils_in_class)
+        return School.pupils_in_school.append(Class.pupils_list)
 
-   # #def debet(self):
-   #     """Method for calculation of income and outcome difference."""
-  #      debet = len(self.pupils_list)
 
 

@@ -10,9 +10,8 @@ class Personal(object):
 class Teachers(Personal):
     """Simple class to simulate teachers."""
 
-    def __init__(self, name, surname, year):
+    def __init__(self, name, surname):
         super().__init__(name, surname)
-        self.year = year
         self.salary = 10000
 
     def teach(self):
@@ -35,9 +34,9 @@ class Stuff(Personal):
         self.salary = 5000
 
 
-# Some simple tests
-director = Director('Dir', 'One')
-print(director.surname, director.salary)
+if __name__ == '__main__':
+    director = Director('Dir', 'One')
+    print(director.surname, director.salary)
 
-teacher1 = Teachers('vo', 'chan', 2)
-print(teacher1.salary, teacher1.year)
+    teacher1 = Teachers('vo', 'chan', 2)
+    print(teacher1.salary, teacher1.year)

@@ -1,6 +1,6 @@
-from pupils import Pupils
+from pupils import Pupil
 from Study_class import Class
-from personal import Teachers, Director, Stuff
+from personal import Teacher, Director, Stuff
 
 
 class School(object):
@@ -8,27 +8,44 @@ class School(object):
 
     def __init__(self, name):
         self.name = name
-        self.director = None
+        self.director = []
         self.stuff = []
         self.teachers = []
-        self.pupils_in_school = []
-        self.classes_list = []
+        self.pupils = []
+        self.classes = []
 
-    def assign_class(self):
-        """Adding study class to school"""
-        return self.classes_list.append(Class)
+    def assign_class(self, study_class):
+        return self.classes.append(study_class)
 
-    def assign_director(self):
-        self.director = Director()
+    def assign_director(self, director):
+        self.director.append(director)
 
-    def assign_stuff(self):
-        self.stuff = Stuff()
+    def assign_stuff(self, stuff):
+        self.stuff.append(stuff)
 
-    def assign_teacher(self):
-        return self.teachers.append(Class.class_teacher)
+    def assign_teacher(self, teacher):
+        self.teachers.append(teacher)
 
-    def assign_pupils_to_school(self):
-        return School.pupils_in_school.append(Class.pupils_list)
+    def assign_pupil_to_school(self, pupil):
+        return self.pupils.append(pupil)
+
+    @property
+    def income(self):
+        income = 0
+        for classes in self.classes:
+            income += classes.outcome
+        return income
 
 
-
+if __name__ == '__main__':
+    academy = School('Academy')
+    fifth = Class('Fifth grade', 5)
+    academy.assign_class(fifth)
+    petrovich = Teacher('Petro', 'Petrovich', 5)
+    academy.assign_teacher(petrovich)
+    fifth.assign_teacher(petrovich)
+    fifth.generate_pupils()
+    print(fifth.income)
+    print(fifth.outcome)
+    print(petrovich.salary)
+    print(academy.income)

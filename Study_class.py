@@ -17,18 +17,18 @@ class Class(object):
         self.teachers.append(teacher)
 
     @property
-    def class_income(self):
+    def income(self):
         income = 0
         for pupil in self.pupils:
             income += pupil.payment
         return income
 
     @property
-    def class_outcome(self):
+    def outcome(self):
         outcome = 0
         for teacher in self.teachers:
             outcome += teacher.salary
-        return self.class_income - outcome
+        return self.income - outcome
 
     def generate_pupils(self):
         for i in range(int(input('How much pupils are in class:'))):
@@ -43,6 +43,6 @@ if __name__ == '__main__':
     vasia = Pupil('vasia', 'pupkin', 5)
     fifth.assign_pupil(vasia)
     fifth.generate_pupils()
-    print(fifth.class_income)
-    print(fifth.class_outcome)
+    print(fifth.income)
+    print(fifth.outcome)
     print(petrovich.salary)

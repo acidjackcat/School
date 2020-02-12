@@ -1,6 +1,5 @@
-from personal import Teachers
+from personal import Teacher
 from pupils import Pupil
-
 
 
 class Class(object):
@@ -39,9 +38,11 @@ class Class(object):
 
 if __name__ == '__main__':
     fifth = Class('Fifth grade', 5)
-    petrovich = Teachers
+    petrovich = Teacher('Petro', 'Petrovich', 5)
+    fifth.assign_teacher(petrovich)
     vasia = Pupil('vasia', 'pupkin', 5)
     fifth.assign_pupil(vasia)
     fifth.generate_pupils()
-    print(fifth.pupils[0])
+    print(fifth.class_income)
     print(fifth.class_outcome)
+    print(petrovich.salary)

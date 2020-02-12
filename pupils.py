@@ -5,7 +5,7 @@ class Pupil(object):
         self.name = name
         self.surname = surname
         self.year = year
-        self.basic_pay = 100
+        self.basic_pay = 200
 
     @property
     def payment(self):

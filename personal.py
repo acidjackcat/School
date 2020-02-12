@@ -13,7 +13,7 @@ class Teacher(Personal):
     def __init__(self, name, surname, year):
         super().__init__(name, surname)
         self.year = int(year)
-        self.stake = 10000
+        self.stake = 1000
 
     @property
     def salary(self):
@@ -26,7 +26,7 @@ class Director(Personal):
 
     def __init__(self, name, surname):
         super().__init__(name, surname)
-        self.stake = 20000
+        self.stake = 10000
 
 
 class Stuff(Personal):
@@ -34,7 +34,7 @@ class Stuff(Personal):
 
     def __init__(self, name, surname):
         super().__init__(name, surname)
-        self.stake = 5000
+        self.stake = 1000
 
 
 if __name__ == '__main__':

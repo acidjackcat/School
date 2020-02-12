@@ -1,5 +1,5 @@
 from personal import Teachers
-from pupils import Pupils
+from pupils import Pupil
 
 
 
@@ -8,23 +8,40 @@ class Class(object):
     def __init__(self, name, year):
         self.name = name
         self.year = year
-        self.pupils_list = []
-        self.teachers_list = []
+        self.pupils = []
+        self.teachers = []
 
     def assign_pupil(self, pupil):
-        return self.pupils_list.append(pupil)
+        self.pupils.append(pupil)
 
     def assign_teacher(self, teacher):
-        return self.teachers_list.append(teacher)
+        self.teachers.append(teacher)
 
-    def class_earn(self):
-        earn = 0
-        for pupil in self.pupils_list:
-            earn += pupil.payment()
-        return earn
+    @property
+    def class_income(self):
+        income = 0
+        for pupil in self.pupils:
+            income += pupil.payment
+        return income
+
+    @property
+    def class_outcome(self):
+        outcome = 0
+        for teacher in self.teachers:
+            outcome += teacher.salary
+        return self.class_income - outcome
+
+    def generate_pupils(self):
+        for i in range(int(input('How much pupils are in class:'))):
+            pupil = Pupil("Name", "Surname", self.year)
+            self.pupils.append(pupil)
 
 
 if __name__ == '__main__':
     fifth = Class('Fifth grade', 5)
-    fifth.assign_pupil()
-    fifth.class_earn()
+    petrovich = Teachers
+    vasia = Pupil('vasia', 'pupkin', 5)
+    fifth.assign_pupil(vasia)
+    fifth.generate_pupils()
+    print(fifth.pupils[0])
+    print(fifth.class_outcome)

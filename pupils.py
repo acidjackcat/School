@@ -1,4 +1,4 @@
-class Pupils(object):
+class Pupil(object):
     """Here is the class which should represent students in our school"""
 
     def __init__(self, name, surname, year):
@@ -14,7 +14,7 @@ class Pupils(object):
 
 
 if __name__ == '__main__':
-    bob = Pupils("bob", 'rodgers', 5)
+    bob = Pupil("bob", 'rodgers', 5)
     print(bob.basic_pay, bob.name, bob.payment, type(bob.payment))
 
 

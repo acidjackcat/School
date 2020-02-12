@@ -4,18 +4,21 @@ class Personal(object):
     def __init__(self, name, surname):
         self.name = name
         self.surname = surname
-        self.salary = None
+        self.stake = None
 
 
-class Teachers(Personal):
+class Teacher(Personal):
     """Simple class to simulate teachers."""
 
-    def __init__(self, name, surname):
+    def __init__(self, name, surname, year):
         super().__init__(name, surname)
-        self.salary = 10000
+        self.year = int(year)
+        self.stake = 10000
 
-    def teach(self):
-        print(f"I'm {self.name} {self.surname} teaching children.")
+    @property
+    def salary(self):
+        salary = self.stake * self.year
+        return int(salary)
 
 
 class Director(Personal):
@@ -23,7 +26,7 @@ class Director(Personal):
 
     def __init__(self, name, surname):
         super().__init__(name, surname)
-        self.salary = 20000
+        self.stake = 20000
 
 
 class Stuff(Personal):
@@ -31,12 +34,12 @@ class Stuff(Personal):
 
     def __init__(self, name, surname):
         super().__init__(name, surname)
-        self.salary = 5000
+        self.stake = 5000
 
 
 if __name__ == '__main__':
     director = Director('Dir', 'One')
-    print(director.surname, director.salary)
+    print(director.surname, director.stake)
 
-    teacher1 = Teachers('vo', 'chan', 2)
+    teacher1 = Teacher('vo', 'chan', 2)
     print(teacher1.salary, teacher1.year)

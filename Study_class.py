@@ -43,6 +43,6 @@ if __name__ == '__main__':
     vasia = Pupil('vasia', 'pupkin', 5)
     fifth.assign_pupil(vasia)
     fifth.generate_pupils()
-    print(fifth.income)
+    print(f"Class iscome is {fifth.income}")
     print(fifth.outcome)
     print(petrovich.salary)

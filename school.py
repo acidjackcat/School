@@ -33,7 +33,7 @@ class School(object):
     def income(self):
         income = 0
         for classes in self.classes:
-            income += classes.outcome
+            income += classes.income
         return income
 
     @property
@@ -46,27 +46,36 @@ class School(object):
     def director_costs(self):
         costs = 0
         for director in self.director:
-            costs += self.director.stake
+            costs += director.salary
 
     @property
     def stuff_costs(self):
         costs = 0
-        for stuf in self.stuff:
-            costs += self.stuff.stake
+        for i in self.stuff:
+            costs += self.stuff.salary
 
     def debet(self):
-        debet = self.income - (self.director_costs + self.stuff_costs)
+        debet = self.income - (self.director_costs + self.stuff_costs +
+                               self.teachers_costs)
         return int(debet)
 
+
 if __name__ == '__main__':
+
     academy = School('Academy')
+
     fifth = Class('Fifth grade', 5)
-    academy.assign_class(fifth)
     petrovich = Teacher('Petro', 'Petrovich', 5)
-    academy.assign_teacher(petrovich)
     fifth.assign_teacher(petrovich)
     fifth.generate_pupils()
     print(fifth.income)
     print(fifth.outcome)
     print(petrovich.salary)
-    print(academy.income)
+
+    academy.assign_class(fifth)
+    academy.assign_teacher(petrovich)
+    print(academy.teachers_costs)
+
+    dir1 = Director('a', 'b')
+    academy.assign_director(dir1)
+    print(academy.director_costs)

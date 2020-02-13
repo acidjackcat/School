@@ -28,6 +28,10 @@ class Director(Personal):
         super().__init__(name, surname)
         self.stake = 10000
 
+    @property
+    def salary(self):
+        return self.stake
+
 
 class Stuff(Personal):
     """Stuff for cleaning, security, medicine"""
@@ -36,10 +40,17 @@ class Stuff(Personal):
         super().__init__(name, surname)
         self.stake = 1000
 
+    @property
+    def salary(self):
+        return self.stake
+
 
 if __name__ == '__main__':
     director = Director('Dir', 'One')
-    print(director.surname, director.stake)
+    print(director.surname, director.salary, director.stake)
 
     teacher1 = Teacher('vo', 'chan', 2)
-    print(teacher1.salary, teacher1.year)
+    print(teacher1.salary, teacher1.year, teacher1.stake)
+
+    cleaner1 = Stuff('v', 'v')
+    print(cleaner1.stake, cleaner1.salary, cleaner1.name)

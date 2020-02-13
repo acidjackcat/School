@@ -4,7 +4,7 @@ from personal import Teacher, Director, Stuff
 from school import School
 
 
-"""Launcher for School imitation program"""
+"""Launcher for School imitation program."""
 
 
 
